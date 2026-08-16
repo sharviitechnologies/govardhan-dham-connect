@@ -1,7 +1,34 @@
-import { Flower2, Gem, BadgeCheck } from "lucide-react";
+import { Gem, BadgeCheck } from "lucide-react";
 
 import { sevaBookings, sponsorItems, trustBadges, trustBlocks } from "@/data/temple";
 import { Emblem, SectionDivider } from "@/components/site/Emblem";
+import sevaPuja from "@/assets/seva-puja.jpg";
+import sevaPrasadam from "@/assets/seva-prasadam.jpg";
+import sevaBirthday from "@/assets/seva-birthday.jpg";
+import sevaAnniversary from "@/assets/seva-anniversary.jpg";
+import sevaSankalp from "@/assets/seva-sankalp.jpg";
+import sponsorStone from "@/assets/sponsor-stone.jpg";
+import sponsorSqft from "@/assets/sponsor-sqft.jpg";
+import sponsorPillar from "@/assets/sponsor-pillar.jpg";
+import sponsorMarble from "@/assets/sponsor-marble.jpg";
+import sponsorTree from "@/assets/sponsor-tree.jpg";
+
+const sevaMedia = [
+  { src: sevaPuja, alt: "Priest performing abhishek puja with brass vessels on a marble altar" },
+  { src: sevaPrasadam, alt: "Plates of prasadam prepared for distribution at the temple" },
+  { src: sevaBirthday, alt: "Family receiving garland and blessed sweets from a temple priest" },
+  { src: sevaAnniversary, alt: "Couple offering a lamp before the temple altar" },
+  { src: sevaSankalp, alt: "Folded hands holding sacred thread and tulsi before a temple lamp" },
+];
+
+const sponsorMedia = [
+  { src: sponsorStone, alt: "Stack of hand-cut carved sandstone temple blocks" },
+  { src: sponsorSqft, alt: "Newly laid sandstone temple flooring being measured" },
+  { src: sponsorPillar, alt: "Ornately carved sandstone temple pillar" },
+  { src: sponsorMarble, alt: "Carved white marble altar panels" },
+  { src: sponsorTree, alt: "Young sapling planted in the temple garden" },
+];
+
 
 export function SevaBooking() {
   return (
@@ -22,25 +49,33 @@ export function SevaBooking() {
         </div>
 
         <div className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5">
-          {sevaBookings.map((s) => (
+          {sevaBookings.map((s, i) => (
             <article
               key={s.title}
-              className="flex flex-col rounded-lg border border-border bg-card p-5 shadow-warm transition hover:-translate-y-1 hover:shadow-lift"
+              className="group flex flex-col overflow-hidden rounded-lg border border-border bg-card shadow-warm transition hover:-translate-y-1 hover:shadow-lift"
             >
-              <span className="flex h-10 w-10 items-center justify-center rounded-full bg-secondary">
-                <Flower2 className="h-5 w-5 text-primary" aria-hidden />
-              </span>
-              <h3 className="mt-4 font-display text-lg text-foreground">{s.title}</h3>
-              <p className="mt-2 flex-1 text-sm leading-relaxed text-muted-foreground">{s.body}</p>
-              <button
-                type="button"
-                className="mt-5 rounded-md border border-primary/35 px-4 py-2.5 text-sm font-semibold text-primary transition hover:bg-primary hover:text-primary-foreground"
-              >
-                Book Now
-              </button>
+              <img
+                src={sevaMedia[i]!.src}
+                alt={sevaMedia[i]!.alt}
+                loading="lazy"
+                width={1200}
+                height={900}
+                className="h-40 w-full object-cover transition duration-500 group-hover:scale-105"
+              />
+              <div className="flex flex-1 flex-col p-5">
+                <h3 className="font-display text-lg text-foreground">{s.title}</h3>
+                <p className="mt-2 flex-1 text-sm leading-relaxed text-muted-foreground">{s.body}</p>
+                <button
+                  type="button"
+                  className="mt-5 rounded-md border border-primary/35 px-4 py-2.5 text-sm font-semibold text-primary transition hover:bg-primary hover:text-primary-foreground"
+                >
+                  Book Now
+                </button>
+              </div>
             </article>
           ))}
         </div>
+
       </div>
     </section>
   );
@@ -63,23 +98,34 @@ export function SponsorStrip() {
         </div>
 
         <div className="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-5">
-          {sponsorItems.map((s) => (
+          {sponsorItems.map((s, i) => (
             <article
               key={s.title}
-              className="rounded-lg border border-gold/40 bg-white/10 p-5 backdrop-blur-sm transition hover:bg-white/15"
+              className="group overflow-hidden rounded-lg border border-gold/40 bg-white/10 backdrop-blur-sm transition hover:bg-white/15"
             >
-              <h3 className="font-display text-lg leading-snug">{s.title}</h3>
-              <p className="mt-3 font-display text-2xl text-gold">{s.amount}</p>
-              <p className="mt-1 text-xs opacity-80">{s.note}</p>
-              <button
-                type="button"
-                className="mt-4 w-full rounded-md bg-gold px-3 py-2.5 text-xs font-bold tracking-wide text-gold-foreground uppercase transition hover:brightness-105"
-              >
-                Sponsor
-              </button>
+              <img
+                src={sponsorMedia[i]!.src}
+                alt={sponsorMedia[i]!.alt}
+                loading="lazy"
+                width={1200}
+                height={900}
+                className="h-36 w-full object-cover transition duration-500 group-hover:scale-105"
+              />
+              <div className="p-5">
+                <h3 className="font-display text-lg leading-snug">{s.title}</h3>
+                <p className="mt-3 font-display text-2xl text-gold">{s.amount}</p>
+                <p className="mt-1 text-xs opacity-80">{s.note}</p>
+                <button
+                  type="button"
+                  className="mt-4 w-full rounded-md bg-gold px-3 py-2.5 text-xs font-bold tracking-wide text-gold-foreground uppercase transition hover:brightness-105"
+                >
+                  Sponsor
+                </button>
+              </div>
             </article>
           ))}
         </div>
+
       </div>
     </section>
   );
