@@ -119,21 +119,32 @@ export function DonatePlatform() {
         </div>
 
         <div className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
-          {sevaCategories.map((s) => (
-            <article key={s.title} className="flex flex-col rounded-lg border border-border bg-card p-6 shadow-warm">
-              <h3 className="font-display text-xl text-foreground">{s.title}</h3>
-              <p className="mt-2 flex-1 text-sm leading-relaxed text-muted-foreground">{s.body}</p>
-              <p className="mt-4 text-xs tracking-[0.16em] text-muted-foreground uppercase">Starting from</p>
-              <p className="font-display text-2xl text-primary">{s.from}</p>
-              <button
-                type="button"
-                className="mt-5 inline-flex items-center justify-center gap-2 rounded-md bg-gold px-4 py-3 text-sm font-semibold text-gold-foreground transition hover:brightness-105"
-              >
-                Contribute
-                <ArrowRight className="h-4 w-4" aria-hidden />
-              </button>
+          {sevaCategories.map((s, i) => (
+            <article key={s.title} className="group flex flex-col overflow-hidden rounded-lg border border-border bg-card shadow-warm">
+              <img
+                src={categoryMedia[i]!.src}
+                alt={categoryMedia[i]!.alt}
+                loading="lazy"
+                width={1200}
+                height={900}
+                className="h-44 w-full object-cover transition duration-500 group-hover:scale-105"
+              />
+              <div className="flex flex-1 flex-col p-6">
+                <h3 className="font-display text-xl text-foreground">{s.title}</h3>
+                <p className="mt-2 flex-1 text-sm leading-relaxed text-muted-foreground">{s.body}</p>
+                <p className="mt-4 text-xs tracking-[0.16em] text-muted-foreground uppercase">Starting from</p>
+                <p className="font-display text-2xl text-primary">{s.from}</p>
+                <button
+                  type="button"
+                  className="mt-5 inline-flex items-center justify-center gap-2 rounded-md bg-gold px-4 py-3 text-sm font-semibold text-gold-foreground transition hover:brightness-105"
+                >
+                  Contribute
+                  <ArrowRight className="h-4 w-4" aria-hidden />
+                </button>
+              </div>
             </article>
           ))}
+
         </div>
 
         <div className="mt-8 flex flex-wrap items-center justify-center gap-3 rounded-lg border border-border bg-card px-6 py-5">
