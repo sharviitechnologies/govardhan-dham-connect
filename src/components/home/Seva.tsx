@@ -98,23 +98,34 @@ export function SponsorStrip() {
         </div>
 
         <div className="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-5">
-          {sponsorItems.map((s) => (
+          {sponsorItems.map((s, i) => (
             <article
               key={s.title}
-              className="rounded-lg border border-gold/40 bg-white/10 p-5 backdrop-blur-sm transition hover:bg-white/15"
+              className="group overflow-hidden rounded-lg border border-gold/40 bg-white/10 backdrop-blur-sm transition hover:bg-white/15"
             >
-              <h3 className="font-display text-lg leading-snug">{s.title}</h3>
-              <p className="mt-3 font-display text-2xl text-gold">{s.amount}</p>
-              <p className="mt-1 text-xs opacity-80">{s.note}</p>
-              <button
-                type="button"
-                className="mt-4 w-full rounded-md bg-gold px-3 py-2.5 text-xs font-bold tracking-wide text-gold-foreground uppercase transition hover:brightness-105"
-              >
-                Sponsor
-              </button>
+              <img
+                src={sponsorMedia[i]!.src}
+                alt={sponsorMedia[i]!.alt}
+                loading="lazy"
+                width={1200}
+                height={900}
+                className="h-36 w-full object-cover transition duration-500 group-hover:scale-105"
+              />
+              <div className="p-5">
+                <h3 className="font-display text-lg leading-snug">{s.title}</h3>
+                <p className="mt-3 font-display text-2xl text-gold">{s.amount}</p>
+                <p className="mt-1 text-xs opacity-80">{s.note}</p>
+                <button
+                  type="button"
+                  className="mt-4 w-full rounded-md bg-gold px-3 py-2.5 text-xs font-bold tracking-wide text-gold-foreground uppercase transition hover:brightness-105"
+                >
+                  Sponsor
+                </button>
+              </div>
             </article>
           ))}
         </div>
+
       </div>
     </section>
   );
