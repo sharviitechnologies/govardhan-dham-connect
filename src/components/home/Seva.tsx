@@ -1,7 +1,34 @@
-import { Flower2, Gem, BadgeCheck } from "lucide-react";
+import { Gem, BadgeCheck } from "lucide-react";
 
 import { sevaBookings, sponsorItems, trustBadges, trustBlocks } from "@/data/temple";
 import { Emblem, SectionDivider } from "@/components/site/Emblem";
+import sevaPuja from "@/assets/seva-puja.jpg";
+import sevaPrasadam from "@/assets/seva-prasadam.jpg";
+import sevaBirthday from "@/assets/seva-birthday.jpg";
+import sevaAnniversary from "@/assets/seva-anniversary.jpg";
+import sevaSankalp from "@/assets/seva-sankalp.jpg";
+import sponsorStone from "@/assets/sponsor-stone.jpg";
+import sponsorSqft from "@/assets/sponsor-sqft.jpg";
+import sponsorPillar from "@/assets/sponsor-pillar.jpg";
+import sponsorMarble from "@/assets/sponsor-marble.jpg";
+import sponsorTree from "@/assets/sponsor-tree.jpg";
+
+const sevaMedia = [
+  { src: sevaPuja, alt: "Priest performing abhishek puja with brass vessels on a marble altar" },
+  { src: sevaPrasadam, alt: "Plates of prasadam prepared for distribution at the temple" },
+  { src: sevaBirthday, alt: "Family receiving garland and blessed sweets from a temple priest" },
+  { src: sevaAnniversary, alt: "Couple offering a lamp before the temple altar" },
+  { src: sevaSankalp, alt: "Folded hands holding sacred thread and tulsi before a temple lamp" },
+];
+
+const sponsorMedia = [
+  { src: sponsorStone, alt: "Stack of hand-cut carved sandstone temple blocks" },
+  { src: sponsorSqft, alt: "Newly laid sandstone temple flooring being measured" },
+  { src: sponsorPillar, alt: "Ornately carved sandstone temple pillar" },
+  { src: sponsorMarble, alt: "Carved white marble altar panels" },
+  { src: sponsorTree, alt: "Young sapling planted in the temple garden" },
+];
+
 
 export function SevaBooking() {
   return (
