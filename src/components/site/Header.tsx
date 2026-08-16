@@ -122,7 +122,7 @@ export function Header() {
           <a href="/" className="flex items-center gap-3">
             <Emblem className="h-11 w-11 shrink-0" alt="Govardhan Dham emblem" />
             <span className="leading-tight">
-              <span className="block font-display text-[0.95rem] font-semibold tracking-[0.06em] text-foreground sm:text-base">
+              <span className="block font-display text-[0.8rem] font-semibold tracking-[0.05em] whitespace-nowrap text-foreground sm:text-sm xl:text-[0.9rem]">
                 HARE KRISHNA MARWAR MANDIR
               </span>
               <span className="block text-[0.65rem] tracking-[0.28em] text-primary">GOVARDHAN DHAM · JODHPUR</span>
@@ -137,7 +137,7 @@ export function Header() {
                   <a
                     href="#"
                     className={cn(
-                      "inline-flex items-center gap-1 rounded-md px-3 py-2 text-sm font-medium text-foreground/85 transition-colors hover:bg-secondary hover:text-primary",
+                      "inline-flex items-center gap-1 rounded-md px-2.5 py-2 text-sm font-medium whitespace-nowrap text-foreground/85 transition-colors hover:bg-secondary hover:text-primary",
                       open === item.label && "bg-secondary text-primary",
                     )}
                   >
@@ -152,7 +152,7 @@ export function Header() {
           <div className="flex items-center gap-2">
             <a
               href="#donate"
-              className="hidden rounded-md bg-primary px-5 py-2.5 text-sm font-semibold text-primary-foreground shadow-warm transition hover:brightness-110 sm:inline-flex"
+              className="hidden rounded-md bg-primary px-5 py-2.5 whitespace-nowrap text-sm font-semibold text-primary-foreground shadow-warm transition hover:brightness-110 sm:inline-flex"
             >
               Donate Now
             </a>
