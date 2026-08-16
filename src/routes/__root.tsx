@@ -81,11 +81,17 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       {
         name: "description",
         content:
-          "Hare Krishna Marwar Mandir — Govardhan Dham, a temple rising in Jodhpur through devotee support, opening March 2027.",
+          "Help build Govardhan Dham, Jodhpur — a carved sandstone temple, Annadanam kitchen, goshala and pilgrim guest house opening March 2027. Donate, sponsor a stone or book a seva.",
       },
       { name: "author", content: "Hare Krishna Marwar Trust" },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
+      { property: "og:title", content: "Govardhan Dham | Hare Krishna Marwar Mandir, Jodhpur" },
+      { name: "twitter:title", content: "Govardhan Dham | Hare Krishna Marwar Mandir, Jodhpur" },
+      { property: "og:description", content: "Help build Govardhan Dham, Jodhpur — a carved sandstone temple, Annadanam kitchen, goshala and pilgrim guest house opening March 2027. Donate, sponsor a stone or book a seva." },
+      { name: "twitter:description", content: "Help build Govardhan Dham, Jodhpur — a carved sandstone temple, Annadanam kitchen, goshala and pilgrim guest house opening March 2027. Donate, sponsor a stone or book a seva." },
+      { property: "og:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/9cd5bc385c60da2c78e1053c6e0d5d97/id-preview-bc20df7e--93beeffb-4755-4839-aa14-59e75b771866.lovable.app-1786866716762.png" },
+      { name: "twitter:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/9cd5bc385c60da2c78e1053c6e0d5d97/id-preview-bc20df7e--93beeffb-4755-4839-aa14-59e75b771866.lovable.app-1786866716762.png" },
     ],
     links: [
       {
