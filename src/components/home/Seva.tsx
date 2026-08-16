@@ -49,25 +49,33 @@ export function SevaBooking() {
         </div>
 
         <div className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5">
-          {sevaBookings.map((s) => (
+          {sevaBookings.map((s, i) => (
             <article
               key={s.title}
-              className="flex flex-col rounded-lg border border-border bg-card p-5 shadow-warm transition hover:-translate-y-1 hover:shadow-lift"
+              className="group flex flex-col overflow-hidden rounded-lg border border-border bg-card shadow-warm transition hover:-translate-y-1 hover:shadow-lift"
             >
-              <span className="flex h-10 w-10 items-center justify-center rounded-full bg-secondary">
-                <Flower2 className="h-5 w-5 text-primary" aria-hidden />
-              </span>
-              <h3 className="mt-4 font-display text-lg text-foreground">{s.title}</h3>
-              <p className="mt-2 flex-1 text-sm leading-relaxed text-muted-foreground">{s.body}</p>
-              <button
-                type="button"
-                className="mt-5 rounded-md border border-primary/35 px-4 py-2.5 text-sm font-semibold text-primary transition hover:bg-primary hover:text-primary-foreground"
-              >
-                Book Now
-              </button>
+              <img
+                src={sevaMedia[i]!.src}
+                alt={sevaMedia[i]!.alt}
+                loading="lazy"
+                width={1200}
+                height={900}
+                className="h-40 w-full object-cover transition duration-500 group-hover:scale-105"
+              />
+              <div className="flex flex-1 flex-col p-5">
+                <h3 className="font-display text-lg text-foreground">{s.title}</h3>
+                <p className="mt-2 flex-1 text-sm leading-relaxed text-muted-foreground">{s.body}</p>
+                <button
+                  type="button"
+                  className="mt-5 rounded-md border border-primary/35 px-4 py-2.5 text-sm font-semibold text-primary transition hover:bg-primary hover:text-primary-foreground"
+                >
+                  Book Now
+                </button>
+              </div>
             </article>
           ))}
         </div>
+
       </div>
     </section>
   );
