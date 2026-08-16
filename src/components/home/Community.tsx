@@ -81,19 +81,30 @@ export function Festivals() {
           </a>
         </div>
         <div className="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
-          {festivals.map((f) => (
-            <article key={f.name} className="flex gap-4 rounded-lg border border-border bg-card p-5 shadow-warm">
-              <div className="flex h-16 w-16 shrink-0 flex-col items-center justify-center rounded-md bg-primary text-primary-foreground">
-                <span className="font-display text-xl leading-none">{f.date.split(" ")[0]}</span>
-                <span className="text-[0.65rem] tracking-widest uppercase">{f.date.split(" ")[1]}</span>
+          {festivals.map((f, i) => (
+            <article key={f.name} className="group overflow-hidden rounded-lg border border-border bg-card shadow-warm">
+              <div className="relative">
+                <img
+                  src={festivalMedia[i]!.src}
+                  alt={festivalMedia[i]!.alt}
+                  loading="lazy"
+                  width={1200}
+                  height={900}
+                  className="h-40 w-full object-cover transition duration-500 group-hover:scale-105"
+                />
+                <div className="absolute bottom-3 left-3 flex h-14 w-14 flex-col items-center justify-center rounded-md bg-primary text-primary-foreground shadow-lift">
+                  <span className="font-display text-lg leading-none">{f.date.split(" ")[0]}</span>
+                  <span className="text-[0.6rem] tracking-widest uppercase">{f.date.split(" ")[1]}</span>
+                </div>
               </div>
-              <div>
+              <div className="p-5">
                 <h3 className="font-display text-lg leading-snug text-foreground">{f.name}</h3>
                 <p className="mt-1 text-xs text-muted-foreground">{f.note}</p>
               </div>
             </article>
           ))}
         </div>
+
       </div>
     </section>
   );

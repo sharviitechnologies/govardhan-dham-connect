@@ -4,6 +4,18 @@ import { fundUtilisation, fundedPercent, milestones, sevaCategories, paymentMeth
 import { useInView } from "@/hooks/use-in-view";
 import { SectionDivider } from "@/components/site/Emblem";
 import { cn } from "@/lib/utils";
+import sevaNirman from "@/assets/seva-nirman.jpg";
+import sevaAnnadanam from "@/assets/seva-annadanam.jpg";
+import sevaGau from "@/assets/seva-gau.jpg";
+import sevaFestival from "@/assets/seva-festival.jpg";
+
+const categoryMedia = [
+  { src: sevaNirman, alt: "Artisans carving red sandstone blocks for the temple" },
+  { src: sevaAnnadanam, alt: "Large vessels of sattvic food in the temple kitchen" },
+  { src: sevaGau, alt: "Cow and calf being fed fresh fodder at the goshala" },
+  { src: sevaFestival, alt: "Devotees celebrating a temple festival with lamps and kirtan" },
+];
+
 
 export function ConstructionPortal() {
   const { ref, inView } = useInView<HTMLDivElement>(0.25);
