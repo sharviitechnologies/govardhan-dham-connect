@@ -13,8 +13,8 @@ import { SectionDivider } from "@/components/site/Emblem";
 import { cn } from "@/lib/utils";
 
 export function Activities() {
-  const [active, setActive] = useState(activityTabs[0].id);
-  const current = activityTabs.find((t) => t.id === active) ?? activityTabs[0];
+  const [active, setActive] = useState(activityTabs[0]!.id);
+  const current = activityTabs.find((t) => t.id === active) ?? activityTabs[0]!;
 
   return (
     <section id="activities" className="border-b border-border">
