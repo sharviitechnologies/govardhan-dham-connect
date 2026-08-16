@@ -11,6 +11,18 @@ import hero from "@/assets/hero-construction.jpg";
 import { activityTabs, articles, festivals, impactStats, testimonial } from "@/data/temple";
 import { SectionDivider } from "@/components/site/Emblem";
 import { cn } from "@/lib/utils";
+import fJanmashtami from "@/assets/festival-janmashtami.jpg";
+import fRadhashtami from "@/assets/festival-radhashtami.jpg";
+import fGovardhan from "@/assets/festival-govardhan.jpg";
+import fKartik from "@/assets/festival-kartik.jpg";
+
+const festivalMedia = [
+  { src: fJanmashtami, alt: "Baby Krishna deity on a decorated swing during Janmashtami" },
+  { src: fRadhashtami, alt: "Temple altar covered in flower petals for Radhashtami" },
+  { src: fGovardhan, alt: "Annakut offering of many food preparations for Govardhan Puja" },
+  { src: fKartik, alt: "Rows of clay lamps glowing on temple steps during Kartik" },
+];
+
 
 export function Activities() {
   const [active, setActive] = useState(activityTabs[0]!.id);
